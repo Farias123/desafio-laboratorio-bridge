@@ -1,0 +1,22 @@
+A ordem correta dos comandos a serem utilizados, visto que algumas tabelas dependem de outras, é:
+
+1- Criar tabelas produtos e pedidos. O comando para criá-las é encontrado em criar-tabelas.sql
+
+2- Encher essas tabelas com valores aleatórios usando as funções criar_produtos e criar_pedidos,
+essas funções estão em valores-aleatorios.sql 
+
+3- Criar todas as outras tabelas a partir dos comandos em criar-tabelas.sql
+
+4- Pronto, você já consegue fazer todas as consultas.
+
+Alguns comentários: 
+Uma função que percebi que não estava sendo usada corretamente, é a criar_pedidos, tentei fazer com
+que o preço total se baseasse em dois produtos aleatórios, mas resultou em um erro, tentei também
+que o pedido i fosse 2 produtos i, para todo i , mas também deu um erro quando tentei usar:
+"[...] WHERE ROW_NUMBER() = i" sendo que i é o índice do loop for. Esse problema nos produtos aleatórios
+afetou diretamente a tabela produtos_vendidos, portanto mudei ela para pedidos_vendidos.
+
+Fora isso, acho que em grande maioria consegui apresentar um algoritmo limpo e legível.
+
+Fiz uso do site: https://chat.openai.com/chat, o utilizei para dúvidas quanto a sintaxe do loop for
+dentro do Postgresql e também quando acontecia algum erro no meu código, eu buscava ali uma resposta.
