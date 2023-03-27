@@ -30,6 +30,7 @@ DECLARE
     endereco TEXT;
     preco_total NUMERIC(10,2);
     nome_cliente TEXT;
+    indicador INTEGER;
 BEGIN
     FOR i IN 1..n LOOP
         pedido := 'Pedido' || floor(random()*4 + 1);
@@ -43,5 +44,11 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+
 SELECT criar_pedidos(50);
 
+IF indicador:= 1 THEN
+    preco_total := SELECT preco FROM produtos 
+ELSE
+
+END IF
