@@ -18,5 +18,16 @@ afetou diretamente a tabela produtos_vendidos, portanto mudei ela para pedidos_v
 
 Fora isso, acho que em grande maioria consegui apresentar um algoritmo limpo e legível.
 
-Fiz uso do site: https://chat.openai.com/chat, o utilizei para dúvidas quanto a sintaxe do loop for
-dentro do Postgresql e também quando acontecia algum erro no meu código, eu buscava ali uma resposta.
+Optei por manter os valores dentro das tabelas uniformes(Exemplo: Produto1, Produto2...), para uma
+visualização mais fácil individual e também de relações com outras colunas, por exemplo:
+Os elementos ProdutoN, possuem DescricaoN.
+
+No código original, não utilizei os relacionamentos entre as tabelas, os criei exclusivamente para a
+representação do diagrama de entidade de relacionamentos, que está incluída nesse repositório, assim
+como o arquivo de backup do banco de dados.
+
+Fiz uso do site: https://chat.openai.com/chat, o utilizei para dúvidas quanto a sintaxe de alguns 
+comandos, incluindo o loop for dentro do Postgresql e também quando acontecia algum erro no meu código,
+eu buscava ali uma resposta.
+
+Uma análise mais comprida foi escrita em README.md
