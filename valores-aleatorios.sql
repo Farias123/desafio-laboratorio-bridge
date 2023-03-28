@@ -19,31 +19,34 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-SELECT criar_produtos(200);
+SELECT criar_produtos(250);
 
 CREATE OR REPLACE FUNCTION criar_pedidos(n INTEGER)
 RETURNS VOID AS $$
 DECLARE
     i INTEGER;
     nome_pedido TEXT;
+    descricao TEXT;
     data_pedido DATE;
     endereco TEXT;
     preco_pedido NUMERIC(10,2);
     nome_cliente TEXT;
+    quantidade_vendida INTEGER;
+    indice INTEGER;
 BEGIN
     FOR i IN 1..n LOOP
-        nome_pedido := 'Pedido' || floor(random()*i + 1);
+        indice := floor(random()*i + 1);
+        nome_pedido := 'Pedido' || indice;
+        descricao := 'Descrição' || indice;
         data_pedido := CURRENT_DATE - INTERVAL '1 year' * random();
         endereco := 'Endereço' || i;
         preco_pedido := round(cast(random()*200.0 as numeric), 2);
         nome_cliente := 'Cliente' || floor(random()*i + 1);
-        INSERT INTO pedidos (pedido, data, endereco, preco_total, nome_cliente)
-        VALUES (nome_pedido, data_pedido, endereco, preco_pedido, nome_cliente);
+        quantidade_vendida := floor(random()*i + 1);
+        INSERT INTO pedidos (pedido, descricao, data, endereco, preco_total, nome_cliente, quantidade_vendida)
+        VALUES (nome_pedido, descricao, data_pedido, endereco, preco_pedido, nome_cliente, quantidade_vendida);
     END LOOP;
 END;
 $$ LANGUAGE plpgsql;
 
-SELECT criar_pedidos(200);
-
-DROP FUNCTION criar_produtos;
-DROP FUNCTION criar_pedidos;
+SELECT criar_pedidos(250);
