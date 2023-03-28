@@ -18,6 +18,7 @@ primeiras tabelas usando as funções do arquivo valores-aleatorios.
 Esse arquivo guarda as funções criar_produtos e criar_pedidos, essas funções criam dados aleatórios 
 para as tabelas produtos e pedidos respectivamente. Após os dados das duas tabelas serem gerados, 
 voltamos para a criação do restante das tabelas:
+
 Categorias acessa a tabela produtos, pega todas as categorias que estão lá e o número de vezes que 
 aparecem, pedidos_vendidos retorna pedidos porém sem cópias e produtos_replicados procura na tabela 
 produtos toda vez que um produto aparece mais de uma vez e conta quantas vezes ele é replicado.
