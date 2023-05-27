@@ -1,4 +1,4 @@
-# desafio-suporte
+# gerador-de-dados-aleatorios
 Esse programa usa PostgreSQL para criar dados aleatórios para uma empresa em relação aos seus produtos,
 pedidos e categorias de produtos. Nesse programa, podem ser feitas seis consultas diferentes no banco 
 de dados. Você pode usar o banco de dados que eu criei usando o arquivo de backup. As relações entre
